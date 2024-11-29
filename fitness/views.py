@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Exercise
 
 def home(request):
-    return HttpResponse("Welcome to the Momentum-Fit app!")
+    exercises = Exercise.objects.all()
+    return render(request, 'fitness/home.html', {'exercises': exercises})
 
