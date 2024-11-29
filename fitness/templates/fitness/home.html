@@ -1,19 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Momentum Fit - Home</title>
-</head>
-<body>
-    <h1>Welcome to Momentum Fit!</h1>
-    <h2>Exercises</h2>
-    <ul>
-        {% for exercise in exercises %}
-            <li>{{ exercise.name }}: {{ exercise.description }}</li>
+{% extends 'fitness/base.html' %} <!-- Extends the base layout -->
+
+{% block title %} <!-- Block for the page title -->
+Home - Momentum Fit
+{% endblock %}
+
+{% block content %} <!-- Main content block -->
+<div class="container py-5">
+    <h1 class="text-center text-primary mb-4">Welcome to Momentum Fit!</h1>
+    <h2 class="text-secondary mb-3">Available Fitness Classes:</h2>
+    <div class="row">
+        {% for fitness_class in fitness_classes %}
+            <!-- Card for each fitness class -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ fitness_class.name }}</h5>
+                        <p class="card-text">
+                            <strong>Instructor:</strong> {{ fitness_class.instructor.name }}<br>
+                            <strong>Duration:</strong> {{ fitness_class.duration }} minutes<br>
+                            <strong>Max Participants:</strong> {{ fitness_class.max_participants }}
+                        </p>
+                    </div>
+                </div>
+            </div>
         {% empty %}
-            <li>No exercises available.</li>
+            <!-- Message if no classes are available -->
+            <p class="text-muted">No fitness classes available.</p>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </div>
+</div>
+{% endblock %}
