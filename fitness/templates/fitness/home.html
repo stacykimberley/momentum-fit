@@ -25,7 +25,7 @@ Home - Momentum Fit
                         {% if fitness_class.is_full %}
                             <button class="btn btn-danger" disabled>Class Full</button>
                         {% else %}
-                            <a href="{% url 'book_class' fitness_class.id %}" class="btn btn-primary">Book Now</a>
+                            <a href="{% url 'book_class' fitness_class.id %}" class="btn btn-warning">Book Now</a>
                         {% endif %}
                     </div>
                 </div>
