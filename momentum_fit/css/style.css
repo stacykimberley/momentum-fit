@@ -42,20 +42,30 @@ footer {
     background-color: #d32f2f; /* Darker red on hover */
 }
 
+/* Class Full button customization (greyed out) */
+.btn-danger[disabled] {
+    background-color: #d3d3d3; /* Grey background for disabled state */
+    border-color: #d3d3d3; /* Match border color */
+    color: #a9a9a9; /* Light grey text */
+    cursor: not-allowed; /* Make the cursor look like it's not clickable */
+}
+
 /* Additional button adjustments */
 .btn {
     border-radius: 25px; /* Slightly rounded corners for buttons */
     transition: background-color 0.3s ease; /* Smooth transition effect */
 }
 
-/* Custom button style for Class Full */
-.btn-class-full {
-    background-color: #d3d3d3; /* Light grey color for the "Class Full" button */
-    color: #808080; /* Dark grey text for better contrast */
-    border-color: #d3d3d3; /* Keep the border grey as well */
+/* Heading customization */
+h1 {
+    color: #333333; /* Force dark grey for h1 heading */
 }
 
-.btn-class-full:hover {
-    background-color: #b0b0b0; /* Slightly darker grey on hover */
-    border-color: #b0b0b0; /* Same as hover background color */
+h2, h3 {
+    color: #333333; /* Dark grey for all headings */
+}
+
+/* Text for Book Now button in the class card */
+.card-title {
+    color: #333; /* Dark grey for card titles */
 }
