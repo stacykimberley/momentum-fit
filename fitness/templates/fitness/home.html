@@ -23,7 +23,7 @@ Home - Momentum Fit
 
                         <!-- Book Now Button -->
                         {% if fitness_class.is_full %}
-                            <button class="btn btn-danger" disabled>Class Full</button>
+                            <button class="btn btn-danger" style="background-color: #d3d3d3; color: #808080; border-color: #d3d3d3;"disabled>Class Full</button>
                         {% else %}
                             <a href="{% url 'book_class' fitness_class.id %}" class="btn btn-warning">Book Now</a>
                         {% endif %}
