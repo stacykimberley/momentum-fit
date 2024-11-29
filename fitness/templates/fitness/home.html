@@ -17,13 +17,15 @@ Home - Momentum Fit
                         <p class="card-text">
                             <strong>Instructor:</strong> {{ fitness_class.instructor.name }}<br>
                             <strong>Duration:</strong> {{ fitness_class.duration }} minutes<br>
-                            <strong>Max Participants:</strong> {{ fitness_class.max_participants }}<br>
-                            <strong>Fee:</strong> £{{ fitness_class.fee|floatformat:2 }}  <!-- Show fee -->
+                            <strong>Max Participants:</strong> {{ fitness_class.capacity }}<br>
+                            <strong>Fee:</strong> £{{ fitness_class.fee }}<br>
                         </p>
-                        {% if fitness_class.booked < fitness_class.max_participants %}
-                            <a href="{% url 'book_class' fitness_class.id %}" class="btn btn-primary">Book Now</a> <!-- Book Now button -->
+
+                        <!-- Book Now Button -->
+                        {% if fitness_class.is_full %}
+                            <button class="btn btn-danger" disabled>Class Full</button>
                         {% else %}
-                            <button class="btn btn-secondary" disabled>Class Full</button> <!-- Disabled button if full -->
+                            <a href="{% url 'book_class' fitness_class.id %}" class="btn btn-primary">Book Now</a>
                         {% endif %}
                     </div>
                 </div>
