@@ -16,6 +16,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-stacykimber-momentumfit-5ii4mv2e2sb.ws.codeinstitute-ide.net',  # Replace with your actual domain
+]
+
 
 # Application definition
 

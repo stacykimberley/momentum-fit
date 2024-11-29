@@ -18,7 +18,9 @@ Home - Momentum Fit
                         <p class="card-text">
                             <strong>Instructor:</strong> {{ fitness_class.instructor.name }}<br>
                             <strong>Duration:</strong> {{ fitness_class.duration }} minutes<br>
-                            <strong>Max Participants:</strong> {{ fitness_class.max_participants }}
+                            <strong>Max Participants:</strong> {{ fitness_class.capacity }}<br>
+                            <!-- Added fee display here -->
+                            <strong>Fee:</strong> £{{ fitness_class.fee }}<br>
                         </p>
                     </div>
                 </div>
