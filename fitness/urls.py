@@ -1,7 +1,6 @@
-from django.urls import path
+from django.urls import path, include  # Make sure include is imported
 from . import views
 
 urlpatterns = [
-    # Add some basic routes to test the app
     path('', views.home, name='home'),
 ]
