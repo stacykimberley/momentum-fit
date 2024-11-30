@@ -32,7 +32,6 @@ class FitnessClass(models.Model):
     duration = models.DurationField()  # Duration in time format (e.g., timedelta)
     capacity = models.IntegerField(default=15)
     booked = models.IntegerField(default=0)  # Tracks number of people who have booked
-    price = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)  # Price field
     
     def __str__(self):
         return f"{self.name} with {self.instructor.name}"

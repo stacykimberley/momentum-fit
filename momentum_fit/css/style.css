@@ -1,0 +1,71 @@
+/* Global Styles */
+body {
+    background-color: white; /* Set background color to white */
+    color: darkgrey; /* Set text color to dark grey */
+}
+
+/* Navbar customization */
+.navbar {
+    background-color: orange; /* Set navbar background to orange */
+}
+
+/* Button customization */
+.btn-primary {
+    background-color: orange; /* Primary button with orange background */
+    border-color: orange; /* Remove border */
+    color: white; /* Text color in buttons should be white */
+}
+
+.btn-primary:hover {
+    background-color: #ff7f32; /* Slightly darker orange for hover effect */
+    border-color: #ff7f32; /* Same as hover background color */
+}
+
+/* Card customization */
+.card {
+    border: 1px solid #f2f2f2; /* Light grey border for cards */
+}
+
+/* Footer customization */
+footer {
+    background-color: orange; /* Set footer background to orange */
+    color: white; /* White text in the footer */
+}
+
+/* Customize Book Now button to match the theme */
+.btn-danger {
+    background-color: #f44336; /* Red button for 'Class Full' state */
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Class Full button customization (greyed out) */
+.btn-danger[disabled] {
+    background-color: #d3d3d3; /* Grey background for disabled state */
+    border-color: #d3d3d3; /* Match border color */
+    color: #a9a9a9; /* Light grey text */
+    cursor: not-allowed; /* Make the cursor look like it's not clickable */
+}
+
+/* Additional button adjustments */
+.btn {
+    border-radius: 25px; /* Slightly rounded corners for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Heading customization */
+h1 {
+    color: #333333; /* Force dark grey for h1 heading */
+}
+
+h2, h3 {
+    color: #333333; /* Dark grey for all headings */
+}
+
+/* Text for Book Now button in the class card */
+.card-title {
+    color: #333; /* Dark grey for card titles */
+}

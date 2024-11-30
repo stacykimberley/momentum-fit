@@ -18,6 +18,10 @@ ALLOWED_HOSTS = ['8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net',]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-stacykimber-momentumfit-5ii4mv2e2sb.ws.codeinstitute-ide.net',  # Replace with your actual domain
+]
+
 
 # Application definition
 
