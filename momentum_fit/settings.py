@@ -14,7 +14,9 @@ SECRET_KEY = 'django-insecure-kkr@rl#$(qi548q106jg#c4-ky$yvp_dxq62+^cid+0!e_$-#9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net',]
 
 
 # Application definition
@@ -106,6 +108,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'fitness' / 'css',  # Points to the fitness/css/ directory
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

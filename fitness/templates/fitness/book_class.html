@@ -1,0 +1,17 @@
+{% extends 'fitness/base.html' %}
+
+{% block title %}
+Book Class - Momentum Fit
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center text-primary mb-4">{{ message }}</h1>
+    <h2 class="text-center">{{ fitness_class.name }}</h2>
+    <p class="text-center">Instructor: {{ fitness_class.instructor.name }}</p>
+    <p class="text-center">Duration: {{ fitness_class.duration }}</p>  <!-- Display Duration -->
+    <p class="text-center">Price: ${{ fitness_class.price }}</p>
+    <p class="text-center">Max Participants: {{ fitness_class.capacity }}</p>
+    <p class="text-center">Spots Available: {{ fitness_class.available_spots }}</p>
+</div>
+{% endblock %}
