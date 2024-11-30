@@ -21,6 +21,11 @@ CSRF_TRUSTED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-stacykimber-momentumfit-5ii4mv2e2sb.ws.codeinstitute-ide.net',  # Replace with your actual domain
 ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net',
+    'http://localhost:8000',  # You can add localhost for local development if needed
+    # Any other trusted origins can go here
+]
 
 
 # Application definition
