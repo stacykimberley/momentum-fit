@@ -14,4 +14,6 @@ vscode:
     - ms-toolsai.jupyter
     - ms-toolsai.jupyter-keymap
     - ms-toolsai.jupyter-renderers
-    - HookyQR.beautify
+    - ms-python.debugpy
+    - ms-toolsai.vscode-jupyter-cell-tags  - ms-python.debugpy
+    - ms-toolsai.vscode-jupyter-slideshow

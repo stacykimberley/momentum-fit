@@ -1,0 +1,13 @@
+{% extends 'fitness/base.html' %}
+
+{% block title %}
+Class Full - Momentum Fit
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center text-danger mb-4">Sorry, this class is full!</h1>
+    <p class="text-center">Please choose another class or try again later.</p>
+    <a href="{% url 'home' %}" class="btn btn-primary">Back to Classes</a>
+</div>
+{% endblock %}

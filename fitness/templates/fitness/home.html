@@ -6,7 +6,7 @@ Home - Momentum Fit
 
 {% block content %}
 <div class="container py-5">
-    <h1 class="text-center text-primary mb-4" >Welcome to Momentum Fit!</h1>
+    <h1 class="text-center text-primary mb-4">Welcome to Momentum Fit!</h1>
     <h2 class="text-secondary mb-3">Available Fitness Classes:</h2>
     <div class="row">
         {% for fitness_class in fitness_classes %}
@@ -16,9 +16,12 @@ Home - Momentum Fit
                         <h5 class="card-title">{{ fitness_class.name }}</h5>
                         <p class="card-text">
                             <strong>Instructor:</strong> {{ fitness_class.instructor.name }}<br>
-                            <strong>Duration:</strong> {{ fitness_class.duration }} minutes<br>
-                            <strong>Max Participants:</strong> {{ fitness_class.max_participants }}
+                            <strong>Duration:</strong> 1 hour<br>  <!-- Hardcoded to "1 hour" as all classes are an hour -->
+                            <strong>Max Participants:</strong> {{ fitness_class.capacity }}<br>
+                            <strong>Price:</strong> ${{ fitness_class.price }}  <!-- Displaying price -->
                         </p>
+                        <!-- Add the "Book Now" button -->
+                        <a href="{% url 'book_class' class_id=fitness_class.id %}" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
             </div>

@@ -3,13 +3,8 @@ from .models import Exercise, Instructor, FitnessClass
 
 # Customizing the display of the FitnessClass model in the admin
 class FitnessClassAdmin(admin.ModelAdmin):
-    # Define which fields to display in the list view
-    list_display = ['name', 'instructor', 'duration', 'capacity', 'booked', 'price']
-    
-    # Define which fields will appear in the detail view when adding or editing a FitnessClass
+    list_display = ['name', 'instructor', 'duration', 'capacity', 'booked', 'price']  # Added 'price' here
     fields = ['name', 'instructor', 'duration', 'capacity', 'booked', 'price']
-    
-    # Optionally, you can make certain fields read-only or add filtering options
     search_fields = ['name', 'instructor__name']
     list_filter = ['instructor', 'name']
 

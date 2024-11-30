@@ -21,6 +21,9 @@ body {
 }
 
 /* Header */
+h1 {
+    color:#ff6f00;
+}
 h1, h2, h3 {
     color: #ff6f00; /* Primary orange for headings */
 }
