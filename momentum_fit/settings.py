@@ -4,32 +4,20 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# Secret key and Debug settings (ensure to keep this secret in production)
 SECRET_KEY = 'django-insecure-kkr@rl#$(qi548q106jg#c4-ky$yvp_dxq62+^cid+0!e_$-#9'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net']
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net',]
+# Allowed hosts for production (adjust this as needed)
+ALLOWED_HOSTS = ['8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-stacykimber-momentumfit-5ii4mv2e2sb.ws.codeinstitute-ide.net',  # Replace with your actual domain
-]
+# CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net',
     'http://localhost:8000',  # You can add localhost for local development if needed
-    # Any other trusted origins can go here
 ]
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +28,7 @@ INSTALLED_APPS = [
     'fitness',
 ]
 
+# Middleware settings
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -50,8 +39,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Root URL configuration
 ROOT_URLCONF = 'momentum_fit.urls'
 
+# Template settings
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -68,12 +59,10 @@ TEMPLATES = [
     },
 ]
 
+# WSGI application
 WSGI_APPLICATION = 'momentum_fit.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+# Database configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,49 +70,23 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
-
+# Password validation (settings are good here)
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
-
+# Localization settings
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
+# Static files settings
 STATIC_URL = 'static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'fitness' / 'css',  # Points to the fitness/css/ directory
-]
-
+STATICFILES_DIRS = [BASE_DIR / 'fitness' / 'css']
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
