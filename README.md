@@ -1,131 +1,220 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Fitness Class Booking System
+![Website Mockup](assets/images/readme/mockup.png)
 
-Welcome Stacy Kimberley Hawadi,
+[Here is the live website link!](https://employee-payroll-e73ff1f1c097.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+# Login details
 
-## Gitpod Reminders
+Username : stacy
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Password : password
 
-`python3 -m http.server`
+# Table of Contents
 
-A blue button should appear to click: _Make Public_,
+- [Purpose](#Purpose)
+- [Goal](#Goal)
+- [UX Design](#UX-Design)
+- [FlowChart](#FlowChart)
+- [Colorama](#Colorama)
+- [Python Logic](#Python-logic)
+- [APIs used](#APIs-used)
+- [Testing](#Testing)
+- [Technologies used](#Technologies-used)
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+# Purpose
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The Employee Payroll App is a comprehensive solution designed to streamline and simplify the payroll process for a small business owner with 5 employees currently.The owner does payroll themself, by entering entering total and overtime hours weekly to create pay stubs for al employees. At the moment since all employees are earning close to minimum wage, there's only 1 deduction; a 20% tax rate. The app ensures accurate and timely payroll processing, reduces administrative workload, and enhances compliance with labor laws and regulations. With user-friendly interfaces and robust functionality, the Employee Payroll App is an essential tool for modern workforce management.
 
-To log into the Heroku toolbelt CLI:
+# Goal
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+The goal of the app is to allow the business owner to create weekly pay stubs for their 5 employees.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+# UX Design
 
-### Connecting your Mongo database
+## Target audience
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+Small business owner with only employees earning close to minimum wage at a tax rate of 20%
 
-------
+## User stories
 
-## Release History
+### As a first time user
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- I want to enter my username and password for authentication so that a user without the login details cannot access payroll information.
+- I want to enter total hours for my employees.
+- I want to enter overtime hours for my employees.
+- I want instructions for entering data to be easy to understand.
+- I want total hours and overtime hours to be updated to a spreadsheet.
+I want gross pay to be calculated.
+- I want net pay to be calculated by deducting the 20% tax rate.
+- I want to create pay stubs for all my employees.
 
-**June 18, 2024,** Add Mongo back into template
+### As a returning user
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+- I want to be able to add more employees if I hire additional ones.
+- I want to be able to calculate net pay for employees in a different tax bracket.
+- I want to create pay stubs for all my employees
 
-**May 28 2024:** Fix Mongo and Links installs
+# Design
 
-**April 26 2024:** Update node version to 16
+## FlowChart
 
-**September 20 2023:** Update Python version to 3.9.17.
+![FlowChart](assets/images/readme/employee_payroll_chart.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+1. **Validate user:**
+- Input username and password.
+- Validate against stored credentials.
+2. **Input total hours:**
+- Input total hours for all employees.
+3. **Update total hours worksheet:**
+- Insert total hours into GoogleSheet.
+4. **Input overtime hours:**
+- Input overtime hours for all employees.
+5. **Update overtime hours worksheet:**
+- Insert overtime hours into GoogleSheet.
+6. **Calculate gross pay:**
+- Calculate each employee's gross pay.
+7. **Update gross pay worksheet**
+- Update GoogleSheet with calculated gross pay far all employees.
+8. **Calculate net pay:**
+- Calculate each employee's net pay.
+9. **Update net pay worksheet:**
+- Update GoogleSheet with calculated net pay far all employees.
+10. **Create pay stubs:**
+- Generate and display pay stubs for all employees
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Colorama
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+The application uses the colorama library for changing the color of terminal text to enhance user experience with clear visual feedback:
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+1. Green for valid data messages.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Green](assets/images/readme/colorama_green.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+2. Red for invalid data messages.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Red](assets/images/readme/colorama_red.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+# Application Features
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Python logic
+- User Validation: Ensures secure login for administrators.
+- total hours Input: Collects total hours for all employees.
+- overtime hours Input: Collects overtime hours for all employees.
+- Data Insertion: Adds total and overtime to Google Sheets.
+- Gross and net pay calculation: Calculates gross and net pay for all employees.
+- Gross and net pay update: Updates Google Sheets with gross and net pay.
+- Pay stubs generation: Produces pay stubs for all employees.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## APIs used
+- Google Sheets API: For storing, retrieving, and updating employee data.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Technologies:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The app is developed using Python.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Future Features
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- Give the admin an option to add/ remove an employee
+- Calculate a tax deduction of 40% for employees earning over $40, 000 a year.
+- Have a separate input for holiday hours.
 
-------
+# Testing
 
-## FAQ about the uptime script
+**No Errors Where Found**
 
-**Why have you added this script?**
+![python validation](assets/images/readme/testing.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+[CI Python Linter](https://pep8ci.herokuapp.com/#)
 
-**How will this affect me?**
+## User story testing
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![User story testing](assets/images/readme/first_time_user_testing.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+# Feature testing 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![Website Mockup](assets/images/readme/feature_testing.png)
 
-**So….?**
+## API Setup
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+1. Google Cloud Project:
 
-**Can I opt out?**
+  - Go to the Google Cloud Console.
+  - Create a new project or select an existing one.
+2.  Enable APIs:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+  - Enable the Google Sheets API and Google Drive API for your project:
+  - Navigate to the API Library.
+  - Search for "Google Sheets API" and "Google Drive API".
+  - Click on each and enable them.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+3. Create a Service Account:
 
-**Anything more?**
+  - Go to the Service Accounts page.
+  - Click "Create Service Account".
+  - Provide a name and description for the service account.
+  - Click "Create and Continue".
+  - Grant Roles to the Service Account:
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+4. Assign the role of "Editor" to the service account.
+  - Click "Continue" and then "Done".
 
----
+5. Create and Download a Service Account Key:
 
-Happy coding!
+  - Click on the service account you just created.
+  - Go to the "Keys" tab.
+  - Click "Add Key" and select "Create new key".
+  - Choose JSON and download the key file. Save it as creds.json in your project directory.
+
+6. Share Google Sheets with Service Account:
+
+  - Open your Google Sheet.
+  - Click "Share".
+  - Enter the service account email (found in the creds.json file) and give it "Editor" access.
+
+## Deployment
+
+### Heroku
+
+1. Sign into [Heroku](https://dashboard.heroku.com/apps)
+2. On the right side click **New** and select **Create new app**
+3. Create a new Heroku app with a unique name. Heroku will generate a random name if you don't specify one and select your region.
+4. Click **Create app**
+5. Close to the top select **Settings**, click on *Reveal Config Vars**
+  - On **Key** and **Value** input fields enter PORT and Paste everything copied from the **creds.json** folder in your gitpod workspace(respectively).
+6. Click **add** to create another set of KEY and VALUE.
+  - In the input fields add KEY: PORT, VALUE: 8000
+7. At the bottom, click **Add buildpack**, from the options select **python** and **nodejs** + **add buildpack** after selecting each.
+8. Close to the top where you clicked **Settings** this time click **Deploy**, click **connect to github**.
+  - search for the name of the repository you want to deploy and click **connect**
+9. Click **deploy branch**
+
+## Technologies used
+
+- GitHub to store the source code.
+- Gitpod chosen IDE to develop the website.
+- Microsoft Word to create testing tables.
+- Code Institute's Gitpod Template to generate the workspace for the project.
+- Code institute learnings for general guidance.
+- Techsini to create mockup of website on different iOS devices.
+- Lucidchart to create the flowchart
+- CI python linter to test |Python code
+
+## Credits
+
+### Code
+
+- Code to add username and password from Hazel Hawadi
+- Python learnings from Code institute lessons and modified.
+- Code Institute Love Sandwiches run through lessons and modified.
+
+## Acknowledgements
+
+I would like to express my gratitude to the following individuals for their contributions and support:
+
+My mentor, Ronan McClelland for great support, advice, learning reasources and guidance throughout this project.
+
+My sister Hazel Hawadi for moral support and help with coding.
