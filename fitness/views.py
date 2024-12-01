@@ -1,27 +1,37 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib import messages  # Import messages framework
-from .models import FitnessClass
-
-def home(request):
-    fitness_classes = FitnessClass.objects.all()
-    return render(request, 'fitness/home.html', {'fitness_classes': fitness_classes})
+from django.core.mail import send_mail
+from .models import FitnessClass, Booking
+from .forms import BookingForm
 
 def book_class(request, class_id):
-    # Get the fitness class or 404 if it doesn't exist
     fitness_class = get_object_or_404(FitnessClass, id=class_id)
 
-    # Check if the class is already full
-    if fitness_class.is_full():
-        # Add a message saying the class is full
-        messages.error(request, f"Sorry, the class {fitness_class.name} is already full!")
-        return render(request, 'fitness/class_full.html', {'fitness_class': fitness_class})
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.fitness_class = fitness_class
+            booking.save()
 
-    # Otherwise, update the booking
-    fitness_class.booked += 1
-    fitness_class.save()
+            # Update the number of booked spots
+            fitness_class.booked += 1
+            fitness_class.save()
 
-    # Add a success message for successful booking
-    messages.success(request, f"You have successfully booked the class: {fitness_class.name}!")
+            # Send email notification
+            send_mail(
+                'Booking Confirmation',
+                f"Hi {booking.name},\n\nYou have successfully booked {fitness_class.name} "
+                f"with {fitness_class.instructor.name} on {booking.date}. See you there!\n\nThanks,\nMomentum Fit",
+                'your_email@example.com',  # Replace with your sender email
+                [booking.email],
+                fail_silently=False,
+            )
 
-    # Redirect to home after successful booking
-    return redirect('home')  # Redirect back to the home page after booking
+            return redirect('home')  # Redirect to home page after booking
+    else:
+        form = BookingForm()
+
+    return render(request, 'book_class.html', {
+        'fitness_class': fitness_class,
+        'form': form,
+    })
