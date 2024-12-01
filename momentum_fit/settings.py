@@ -1,20 +1,24 @@
 import os
 from pathlib import Path
+import dj_database_url
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Secret key and Debug settings (ensure to keep this secret in production)
+# Secret key and debug settings
 SECRET_KEY = 'django-insecure-kkr@rl#$(qi548q106jg#c4-ky$yvp_dxq62+^cid+0!e_$-#9'
 DEBUG = True
 
-# Allowed hosts for production (adjust this as needed)
-ALLOWED_HOSTS = ['8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net', 'localhost']
+# Allowed hosts
+ALLOWED_HOSTS = [
+    'momentum-fit.herokuapp.com',
+    '8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net'
+]
 
 # CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net',
-    'http://localhost:8000',  # You can add localhost for local development if needed
+    'https://momentum-fit.herokuapp.com',
+    'https://8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net'
 ]
 
 # Application definition
@@ -28,7 +32,6 @@ INSTALLED_APPS = [
     'fitness',
 ]
 
-# Middleware settings
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -39,10 +42,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Root URL configuration
 ROOT_URLCONF = 'momentum_fit.urls'
 
-# Template settings
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -59,18 +60,14 @@ TEMPLATES = [
     },
 ]
 
-# WSGI application
 WSGI_APPLICATION = 'momentum_fit.wsgi.application'
 
-# Database configuration
+# Database settings
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600),
 }
 
-# Password validation (settings are good here)
+# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -78,15 +75,16 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# Localization settings
+# Localization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
 # Static files settings
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'fitness' / 'css']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

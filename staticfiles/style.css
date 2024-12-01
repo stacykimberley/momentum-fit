@@ -1,0 +1,119 @@
+/* Remove default Bootstrap link color */
+a, .navbar a, .btn, .btn-primary, .btn-secondary {
+    color: inherit !important; /* Inherit color from parent (will use your custom styles) */
+    text-decoration: none !important; /* Remove underline */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ff6f00 !important; /* Primary orange */
+}
+
+.navbar a {
+    color: white !important; /* White text for navbar links */
+}
+
+.navbar a:hover {
+    color: #fff0e6 !important; /* Lighter orange on hover */
+}
+
+/* Header Styling */
+h1, h2, h3 {
+    color: #ff6f00 !important; /* Orange color for headings */
+}
+
+/* Button Styling */
+.btn, .btn-primary, .btn-secondary {
+    background-color: #ff6f00 !important; /* Primary orange */
+    border-color: #e65100 !important; /* Darker orange for border */
+    color: white !important; /* White text for buttons */
+}
+
+.btn:hover, .btn-primary:hover, .btn-secondary:hover {
+    background-color: #e65100 !important; /* Darker orange on hover */
+    border-color: #bf360c !important; /* Even darker orange on hover */
+}
+
+/* Button for Success/Green styling */
+.btn-success {
+    background-color: #4CAF50 !important; /* Green background */
+    border-color: #388E3C !important; /* Darker green for border */
+    color: white !important; /* White text */
+}
+
+.btn-success:hover {
+    background-color: #388E3C !important; /* Darker green on hover */
+    border-color: #2C6B2F !important; /* Even darker green on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ff6f00 !important; /* Primary orange footer */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Form Styling */
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc; /* Light gray border */
+    margin-bottom: 10px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus, textarea:focus {
+    border-color: #ff6f00 !important; /* Orange focus border */
+}
+
+/* General Card Styling */
+.card {
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #fff3e0; /* Very light orange background for headers */
+    font-weight: bold;
+}
+
+.card-body {
+    background-color: #ffffff; /* White background */
+    color: #333;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd; /* Light gray border for table cells */
+    text-align: left;
+}
+
+table th {
+    background-color: #ff6f00; /* Orange background for headers */
+    color: white;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff6f00;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e65100; /* Darker orange on hover */
+}
