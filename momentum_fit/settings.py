@@ -11,9 +11,11 @@ DEBUG = True
 
 # Allowed hosts
 ALLOWED_HOSTS = [
-    'momentum-fit.herokuapp.com',
-    '8000-stacykimber-momentumfit-d0emtof83a2.ws.codeinstitute-ide.net'
+    'momentum-fit-f8d448119d40.herokuapp.com',
+    'localhost',
+    '127.0.0.1',
 ]
+
 
 # CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
