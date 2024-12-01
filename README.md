@@ -1,220 +1,151 @@
-# Fitness Class Booking System
-![Website Mockup](assets/images/readme/mockup.png)
+# MOMENTUM FIT
 
-[Here is the live website link!](https://employee-payroll-e73ff1f1c097.herokuapp.com/)
+![Website Mockup](fitness/assets/images/mockup-momentum.png)
 
-
-# Login details
-
-Username : stacy
-
-Password : password
-
-# Table of Contents
-
-- [Purpose](#Purpose)
-- [Goal](#Goal)
-- [UX Design](#UX-Design)
-- [FlowChart](#FlowChart)
-- [Colorama](#Colorama)
-- [Python Logic](#Python-logic)
-- [APIs used](#APIs-used)
-- [Testing](#Testing)
-- [Technologies used](#Technologies-used)
+[This is a link to the live website](https://momentum-fit-f8d448119d40.herokuapp.com/)
 
 
+## Table Of Contents
+- [Introduction](#introduction)
+- [Design](#design) 
+  * [User Feedback](#user-feedback)
+- [Application Features](#application-features)
+  * [Data/APIs Used](#dataapis-used)
+- [UX (User Experience)](#user-experience)
+- [Accessibility](#accessibility)
+- [Future Features](#future-features)
+- [Testing](#testing)  
+- [Deployment](#deployment)
+- [Technologies](#technologies)
+- [Code](#code)  
+- [Acknowledgements](#acknowledgements) 
 
 
-# Purpose
-
-The Employee Payroll App is a comprehensive solution designed to streamline and simplify the payroll process for a small business owner with 5 employees currently.The owner does payroll themself, by entering entering total and overtime hours weekly to create pay stubs for al employees. At the moment since all employees are earning close to minimum wage, there's only 1 deduction; a 20% tax rate. The app ensures accurate and timely payroll processing, reduces administrative workload, and enhances compliance with labor laws and regulations. With user-friendly interfaces and robust functionality, the Employee Payroll App is an essential tool for modern workforce management.
-
-# Goal
-
-The goal of the app is to allow the business owner to create weekly pay stubs for their 5 employees.
-
-# UX Design
-
-## Target audience
-
-Small business owner with only employees earning close to minimum wage at a tax rate of 20%
-
-## User stories
-
-### As a first time user
-
-- I want to enter my username and password for authentication so that a user without the login details cannot access payroll information.
-- I want to enter total hours for my employees.
-- I want to enter overtime hours for my employees.
-- I want instructions for entering data to be easy to understand.
-- I want total hours and overtime hours to be updated to a spreadsheet.
-I want gross pay to be calculated.
-- I want net pay to be calculated by deducting the 20% tax rate.
-- I want to create pay stubs for all my employees.
-
-### As a returning user
-
-- I want to be able to add more employees if I hire additional ones.
-- I want to be able to calculate net pay for employees in a different tax bracket.
-- I want to create pay stubs for all my employees
+## Introduction
+Momentum Fit is a fitness tracking and workout management platform designed to help users track their workouts, set fitness goals, and monitor their progress over time. The user-friendly interface ensures an engaging experience, making it easier for individuals to stay motivated and achieve their fitness goals.
 
 # Design
+  ### User Feedback
+- Workout Logging Success: "Workout logged successfully! Keep it up!"
+- Goal Achievement: "Congratulations on reaching your fitness goal!"
+- Error: "Sorry, the class Pilates is already full!"
 
-## FlowChart
+## Application Features
+- 4 classes available: Pilates, Cardio, HydroHiit and Zumba, all of them at the same time 1400hrs. 
+- Each class takes a maximum of 15 users.
+- Book now button.
+- Confirmation that a user has booked a class.
 
-![FlowChart](assets/images/readme/employee_payroll_chart.png)
+## Data/APIs Used
+- Django ORM: Utilized for managing workout and user data efficiently.
 
-1. **Validate user:**
-- Input username and password.
-- Validate against stored credentials.
-2. **Input total hours:**
-- Input total hours for all employees.
-3. **Update total hours worksheet:**
-- Insert total hours into GoogleSheet.
-4. **Input overtime hours:**
-- Input overtime hours for all employees.
-5. **Update overtime hours worksheet:**
-- Insert overtime hours into GoogleSheet.
-6. **Calculate gross pay:**
-- Calculate each employee's gross pay.
-7. **Update gross pay worksheet**
-- Update GoogleSheet with calculated gross pay far all employees.
-8. **Calculate net pay:**
-- Calculate each employee's net pay.
-9. **Update net pay worksheet:**
-- Update GoogleSheet with calculated net pay far all employees.
-10. **Create pay stubs:**
-- Generate and display pay stubs for all employees
+## User Experience
+### As a first time user:
+ - I want to see all the available classes.
+ - I want to see how much the classes are.
+ - I want to see the name of the instructor.
+ - I want to see how long the class is.
+ - I want to book a class.
+ - I want to get confirmation that I have booked a class.
 
-## Colorama
-
-The application uses the colorama library for changing the color of terminal text to enhance user experience with clear visual feedback:
-
-1. Green for valid data messages.
-
-![Green](assets/images/readme/colorama_green.png)
-
-2. Red for invalid data messages.
-
-![Red](assets/images/readme/colorama_red.png)
-
-# Application Features
-
-## Python logic
-- User Validation: Ensures secure login for administrators.
-- total hours Input: Collects total hours for all employees.
-- overtime hours Input: Collects overtime hours for all employees.
-- Data Insertion: Adds total and overtime to Google Sheets.
-- Gross and net pay calculation: Calculates gross and net pay for all employees.
-- Gross and net pay update: Updates Google Sheets with gross and net pay.
-- Pay stubs generation: Produces pay stubs for all employees.
-
-## APIs used
-- Google Sheets API: For storing, retrieving, and updating employee data.
-
-## Technologies:
-
-The app is developed using Python.
+## Accessibility
+- Color Contrast: Ensures adequate contrast for readability, particularly for users with visual impairments.
+-  Keyboard Navigation: All key features can be accessed via keyboard for users with mobility challenges.
+- Screen Reader Compatibility: The app is designed to be compatible with screen readers for users with visual disabilities.
+- Error Messages: Detailed error messages are provided to guide users in correcting any issues with their input.
 
 ## Future Features
+- Payment Gateway Integration: Allow users to pay for bookings directly through the system.
+- Integration with Wearable Devices: Integrate with fitness trackers and wearables like Fitbit, Apple Watch, etc.
+- Diet and Nutrition Tracking: Add functionality to track daily food intake and calories burned.
+- Mobile App: A mobile version for more on-the-go functionality, including workout logging and notifications.
+- Social Sharing: Users can share their workout achievements on social media.
+- Advanced Reporting: More detailed statistics and insights into users’ fitness progress over time.
+- Leave reviews.
 
-- Give the admin an option to add/ remove an employee
-- Calculate a tax deduction of 40% for employees earning over $40, 000 a year.
-- Have a separate input for holiday hours.
+## Testing
+### User story Testing
+ - The app delivers on all first time user stories.
 
-# Testing
+### Feature Testing
+- Workout Selection: Ensure that users can select workout types, input data, and save it without issues.
 
-**No Errors Where Found**
+![Website Mockup](fitness/assets/images/lighthouse1.png)
 
-![python validation](assets/images/readme/testing.png)
-
-[CI Python Linter](https://pep8ci.herokuapp.com/#)
-
-## User story testing
-
-![User story testing](assets/images/readme/first_time_user_testing.png)
-
-# Feature testing 
-
-![Website Mockup](assets/images/readme/feature_testing.png)
-
-## API Setup
-
-1. Google Cloud Project:
-
-  - Go to the Google Cloud Console.
-  - Create a new project or select an existing one.
-2.  Enable APIs:
-
-  - Enable the Google Sheets API and Google Drive API for your project:
-  - Navigate to the API Library.
-  - Search for "Google Sheets API" and "Google Drive API".
-  - Click on each and enable them.
-
-3. Create a Service Account:
-
-  - Go to the Service Accounts page.
-  - Click "Create Service Account".
-  - Provide a name and description for the service account.
-  - Click "Create and Continue".
-  - Grant Roles to the Service Account:
-
-4. Assign the role of "Editor" to the service account.
-  - Click "Continue" and then "Done".
-
-5. Create and Download a Service Account Key:
-
-  - Click on the service account you just created.
-  - Go to the "Keys" tab.
-  - Click "Add Key" and select "Create new key".
-  - Choose JSON and download the key file. Save it as creds.json in your project directory.
-
-6. Share Google Sheets with Service Account:
-
-  - Open your Google Sheet.
-  - Click "Share".
-  - Enter the service account email (found in the creds.json file) and give it "Editor" access.
+![Website Mockup](fitness/assets/images/lighthouse2.png)
 
 ## Deployment
-
 ### Heroku
 
-1. Sign into [Heroku](https://dashboard.heroku.com/apps)
-2. On the right side click **New** and select **Create new app**
-3. Create a new Heroku app with a unique name. Heroku will generate a random name if you don't specify one and select your region.
-4. Click **Create app**
-5. Close to the top select **Settings**, click on *Reveal Config Vars**
-  - On **Key** and **Value** input fields enter PORT and Paste everything copied from the **creds.json** folder in your gitpod workspace(respectively).
-6. Click **add** to create another set of KEY and VALUE.
-  - In the input fields add KEY: PORT, VALUE: 8000
-7. At the bottom, click **Add buildpack**, from the options select **python** and **nodejs** + **add buildpack** after selecting each.
-8. Close to the top where you clicked **Settings** this time click **Deploy**, click **connect to github**.
-  - search for the name of the repository you want to deploy and click **connect**
-9. Click **deploy branch**
 
-## Technologies used
+1. Sign Up / Log In to Heroku:
 
-- GitHub to store the source code.
-- Gitpod chosen IDE to develop the website.
-- Microsoft Word to create testing tables.
-- Code Institute's Gitpod Template to generate the workspace for the project.
-- Code institute learnings for general guidance.
-- Techsini to create mockup of website on different iOS devices.
-- Lucidchart to create the flowchart
-- CI python linter to test |Python code
+- Visit Heroku and either create a new account or log in to your existing account.
 
-## Credits
+2. Create a New App:
+- Once logged in, click on the New button on the top right of the dashboard.
+- Select Create new app.
+- Choose a unique name for your app and select your region (e.g., United States or Europe).
+- Click Create app.
+- Set Up Heroku CLI:
 
-### Code
+3. Install the Heroku CLI if you haven’t already. You can download it from here.
+After installation, open your terminal or command prompt and log in using the following command:
+Copy code
+heroku login
+Prepare Your Code for Deployment:
 
-- Code to add username and password from Hazel Hawadi
-- Python learnings from Code institute lessons and modified.
-- Code Institute Love Sandwiches run through lessons and modified.
+4. Ensure your app has a Procfile (to specify how to run your application) and requirements.txt (which lists all the Python packages your app depends on).
+Add any necessary environment variables to your code, such as SECRET_KEY, DEBUG, DATABASE_URL, etc.
+Push Your Code to Heroku:
 
-## Acknowledgements
+5. In your project folder, initialize Git (if you haven’t already):
+- git init
+- git add .
+- Commit the changes:
 
-I would like to express my gratitude to the following individuals for their contributions and support:
+6. Link your app to Heroku:
 
-My mentor, Ronan McClelland for great support, advice, learning reasources and guidance throughout this project.
+7. If your app uses a database (e.g., PostgreSQL), you can provision a Heroku Postgres database by running:
 
-My sister Hazel Hawadi for moral support and help with coding.
+heroku addons:create heroku-postgresql:hobby-dev
+Run database migrations to set up your database schema:
+
+heroku run python manage.py migrate
+Configure Environment Variables:
+
+8. You can set environment variables on Heroku using the following command:
+
+heroku config:set <VARIABLE_NAME>=<VALUE>
+Ensure variables like SECRET_KEY, DEBUG, and ALLOWED_HOSTS are set up correctly.
+
+9. Open Your Application:
+
+10. Once the code is deployed and the database is set up, open your app by 
+heroku open
+Monitor Your App:
+
+11. You can monitor logs and check for errors by running:
+
+- heroku logs --tail
+
+## Technologies
+- Github for the source code.
+- Gitpod for creating the website.
+- Django: Web framework for backend logic and server-side functionality.
+- Code Institute's Gitpod Template
+- Heroku for deployment
+- Code institute learnings
+- Techsini to create a mockup of the website
+- PostgreSQL: Database for storing user and booking data.
+- HTML/CSS/JavaScript: Frontend design and interactivity.
+
+## Code
+- [Code Institute](https://learn.codeinstitute.net/dashboard)
+- Tutorial videos- Programming with Mosh [YouTube](https://www.youtube.com/@programmingwithmosh)
+
+
+## Acknowledgement
+- A big thanks to Slack Community for for always being someone willing to answer my questions.
+
+- A big thank you to the Code Institute team for their constant support and resources that made this project possible.
