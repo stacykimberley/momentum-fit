@@ -1,6 +1,6 @@
-# MOMENTUS FIT
+# MOMENTUM FIT
 
-![Website Mockup](assets/images/readme/mockup.png)
+![Website Mockup](fitness/assets/images/mockup-momentum.png)
 
 [This is a link to the live website](https://momentum-fit-f8d448119d40.herokuapp.com/)
 
